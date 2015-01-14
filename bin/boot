@@ -20,8 +20,9 @@ if [ ! -f $LOGSTASH_CONFIG_FILE ]; then
         LOGSTASH_CONFIG_URL="https://gist.github.com/pblittle/8778567/raw/logstash.conf"
     fi
 
-    echo "Downloading default configuration file ..."
+    echo "Downloading default configuration files ..."
     wget $LOGSTASH_CONFIG_URL -O $LOGSTASH_CONFIG_FILE
+    wget $KIBANA_CONFIG_URL -O "/opt/logstash/vendor/kibana/config.js"
 
     # This magic will replace ES_HOST and ES_PORT in your logstash.conf
     # file if they exist with the IP and port dynamically generated
