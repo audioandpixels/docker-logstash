@@ -3,7 +3,7 @@ docker build -t audioandpixels/logstash github.com/audioandpixels/docker-logstas
 ```
 
 ```
-docker run -d -e LOGSTASH_CONFIG_URL=https://gist.githubusercontent.com/jasoncox/783c5e574a47e33164f8/raw/3a6a36b89e05c7e775f20594123df1841cf94137/logstash.conf -e ES_HOST=0.0.0.0 -e ES_PORT=9200 -e ES_USER=user -e ES_PASSWORD=password -p 9292:9292 -p 5228:5228/udp audioandpixels/logstash
+docker run -d -e LOGSTASH_CONFIG_URL=https://gist.githubusercontent.com/jasoncox/783c5e574a47e33164f8/raw/3a6a36b89e05c7e775f20594123df1841cf94137/logstash.conf -e KIBANA_CONFIG_URL=https://gist.githubusercontent.com/jasoncox/ae9b9d13e0f7f914c1d8/raw/432735bd5f959dd0a34fb0ca550b1c702cfd608e/config.js -e ES_HOST=0.0.0.0 -e ES_PORT=9200 -e ES_USER=user -e ES_PASSWORD=password -p 9292:9292 -p 5228:5228/udp audioandpixels/logstash
 ```
 
 # Logstash Dockerfile
