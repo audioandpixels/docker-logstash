@@ -30,8 +30,10 @@ if [ ! -f $LOGSTASH_CONFIG_FILE ]; then
     # Note: Don't use this on a file mounting using a docker
     # volume, as the inode switch will cause `device or resource busy`
     # Instead download your file as normal
-    sed -e "s/ES_HOST/${ES_PORT_9200_TCP_ADDR}/g" \
-        -e "s/ES_PORT/${ES_PORT_9200_TCP_PORT}/g" \
+    sed -e "s/ES_HOST/${ES_HOST}/g" \
+        -e "s/ES_PORT/${ES_PORT}/g" \
+        -e "s/ES_USER/${ES_USER}/g" \
+        -e "s/ES_PASSWORD/${ES_PASSWORD}/g" \
         -i $LOGSTASH_CONFIG_FILE
 fi
 
