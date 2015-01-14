@@ -1,3 +1,7 @@
+```docker build -t audioandpixels/logstash github.com/audioandpixels/docker-logstash.git
+
+```docker run -d -e LOGSTASH_CONFIG_URL=https://gist.githubusercontent.com/jasoncox/783c5e574a47e33164f8/raw/946ca8bc094d155496e9abd989a899ccfb154726/logstash_linked.conf -e ES_HOST=0.0.0.0 -e ES_PORT=9200 -e ES_USER=user -e ES_PASSWORD=password -p 9292:9292 -p 5228:5228/udp audioandpixels/logstash
+
 # Logstash Dockerfile
 
 This is a highly configurable [logstash][7] (1.4.2) image running [Elasticsearch][8] (1.1.1) and [Kibana][9] (3.0.1).
